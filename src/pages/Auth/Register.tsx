@@ -61,7 +61,14 @@ const Register = () => {
   const onSubmit = async (values: RegisterFormValues) => {
     try {
       const { confirmPassword, ...userData } = values;
-      await register(userData);
+      // Ensure all required properties are passed to register
+      await register({
+        name: userData.name,
+        email: userData.email,
+        password: userData.password,
+        role: userData.role,
+        location: userData.location,
+      });
       toast({
         title: "Registro exitoso",
         description: "Tu cuenta ha sido creada. Bienvenido a Sharitoken.",

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import MainLayout from "@/components/Layout/MainLayout";
 import { useAppContext, Token, Crop, User } from "@/context/AppContext";
@@ -245,7 +244,7 @@ const Projects = () => {
                 <SelectValue placeholder="Filtrar por tipo de cultivo" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Todos los cultivos</SelectItem>
+                <SelectItem value="all">Todos los cultivos</SelectItem>
                 {productTypes.map((type) => (
                   <SelectItem key={type} value={type}>{type}</SelectItem>
                 ))}
